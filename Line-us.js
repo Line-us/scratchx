@@ -1,5 +1,6 @@
-/* Extension demonstrating a blocking command block */
-/* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
+/*
+**  Line-us scratch extension.
+*/
 
 new (function() {
     var ext = this;
@@ -8,6 +9,7 @@ new (function() {
     var lastY = 1000;
     var lastZ = 1000;
     var z = 1000;
+    var scale = 1.0;
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -28,12 +30,12 @@ new (function() {
         console.log('Connecting to Line-us: ' + name);
         ws = new WebSocket("ws://" + name + "/");
         ws.onopen = function (event) {
-          console.log("Conected");
-          callback();
+          console.log("Connected, waiting for hello");
         }
         ws.onmessage = function (event) {
-            console.log(event.data);
-          }
+          console.log("Got hello");
+          callback();
+        }
       } else {
         console.log('Line-us is already connected');
         callback();
@@ -49,7 +51,7 @@ new (function() {
       }
       ws = null;
       callback();
-    }
+    };
 
     ext.moveTo = function(unscaledX, unscaledY, callback) {
       if(! ws) {
@@ -73,7 +75,7 @@ new (function() {
           callback();
         }
       }
-    }
+    };
 
     ext.pen = function(pen, callback) {
       if(! ws) {
@@ -91,7 +93,7 @@ new (function() {
         }
       }
       callback();
-    }
+    };
 
     ext.home = function(callback) {
       if(! ws) {
@@ -104,7 +106,7 @@ new (function() {
         lastZ = 1000;
       }
       callback();
-    }
+    };
 
     ext.speed = function (speed, callback) {
       if(! ws) {
@@ -141,15 +143,14 @@ new (function() {
           callback();
         }
       }
-    }
+    };
 
     scaleToLineUs = function(x, y) {
-      scale = 1;
       baseScale = 2.778;
       xOut = (433 - y) * baseScale * scale;
       yOut = x * baseScale * scale;
       return [xOut, yOut];
-    }
+    };
 
     // Block and block menu descriptions
     var descriptor = {
