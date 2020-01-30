@@ -1,8 +1,9 @@
-# Line-us Scratchx Extension
+# Control your Line-us from Scratch
 
-You have stumbled across the Top Secret Line-us Scratch Beta Programme!
+This is the Scratchx extension for Line-us
 
-We'll be launching our Scratchx extension soon, but of you'd like to try it out before we release it drop us an email at [help@line-us.com](mailto:help@line-us.com) and we'll add you to the testing programme. 
+It's easy and fun to control your Line-us from Scratch. Make sure you have updated your Line-us App to version 2, and upgraded your firmware to version 2.0.3 or later then [run our Scratchx extension by clicking here](http://scratchx.org/?url=http://Line-us.github.io/scratchx/Line-us.js#scratch) to open Scratch in your web browser.
 
-To use Scratch you'll need a firmware update to your Line-us; without it you won't be able to connect. However, if you just want to take a look at what the blocks will look like you can [run our Scratchx extension by clicking here](http://scratchx.org/?url=http://Line-us.github.io/scratchx/Line-us.js#scratch).
+Next, you'll get a big scary warning saying that the extension you're about to load is experimental. If you're feeling brave and want to start your Scratch adventure click I understand, Continue. You'll then see scratch with the custom Line-us blocks. 
 
+Have fun!
